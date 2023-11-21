@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Login From</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+  <style>
+      .transparent-background {
+        background-color: rgba(0, 0, 0, 0); /* Adjust the opacity value (0.5 in this example) */
+      }
+    </style>
+  <title></title>
+  <script>
+    function calculate() {
+      // Get the input value
+      var depositAmount = parseFloat(document.getElementById("amountDeposit").value);
+      
+      // Check if the input is a valid number
+      if (isNaN(depositAmount)) {
+        alert("Please enter a valid amount.");
+        return;
+      }
+      // Multiply the input value
+      var commission = depositAmount * 0.05; // Change 2 to the desired multiplier
+      var tax = commission * 0.5;
+      var final_Amount = commission-tax;
+      // Display the result
+      document.getElementById("commission").textContent = "Commission: ₹ " + commission;
+      document.getElementById("tax").textContent = "Tax: ₹ " + tax;
+      document.getElementById("final_Amount").textContent = "Final Amount: ₹ " + final_Amount;
+    }
+  </script>
+</head>
+<body>
+    <form>
+        <div class="transparent-background">
+        <h2>Data Entry Form</h2>
+        <label for="inputField">Name:</label>
+        <input type="text" id="inputField" name="name" placeholder="Enter Person Name"> 
+        <h2></h2>
+        <label for="inputField">Date:</label>
+        <input type="date" id="inputField" Date="Date">
+        <h2></h2>
+        <label for="policy">Policy:</label>
+        <select id="policy">
+            <option value="Select Policy">Select Policy</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <h2></h2>
+        <label for="inputField">Deposit Amount: ₹</label>
+        <input type="number" id="amountDeposit" placeholder="Enter Deposit Amount">
+        <h2></h2>
+        <button onclick="calculate()">Calculate</button>
+        <h2></h2>
+        <p id="commission"></p>
+        <p id="tax"></p>
+        <p id="final_Amount"></p>
+        </div>
+   
+        <script src="script.js"></script>
+    </form>
+      
+</body>
+</html>
